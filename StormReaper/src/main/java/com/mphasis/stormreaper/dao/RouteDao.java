@@ -1,7 +1,7 @@
 package com.mphasis.stormreaper.dao;
 
-import com.mphasis.shipproject.entities.Passenger;
-import com.mphasis.shipproject.entities.Route;
+import com.mphasis.stormreaper.entities.Passenger;
+import com.mphasis.stormreaper.entities.Route;
 
 public interface RouteDao {
 	public int addRoute(Route r);

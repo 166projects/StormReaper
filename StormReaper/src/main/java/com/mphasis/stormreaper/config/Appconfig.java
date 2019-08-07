@@ -1,4 +1,4 @@
-package com.mphasis.shipproject.config;
+package com.mphasis.stormreaper.config;
 
 
 import java.util.Properties;
@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
-@ComponentScan(basePackages="com.mphasis.shipproject")
+@ComponentScan(basePackages="com.mphasis.stormreaper")
 public class Appconfig {
 
 	
@@ -47,7 +47,7 @@ public class Appconfig {
     props.put("hibernate.format_sql", "true");
     props.put("hibernate.default_schema","shipproject");
     sessionFactory.setHibernateProperties(props);
-    sessionFactory.setPackagesToScan("com.mphasis.training.springhibernate");
+    sessionFactory.setPackagesToScan("com.mphasis.stormreaper.entities");
     return sessionFactory;
     
     

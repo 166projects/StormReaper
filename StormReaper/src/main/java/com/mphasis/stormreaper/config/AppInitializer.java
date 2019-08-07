@@ -1,4 +1,4 @@
-package com.mphasis.shipproject.config;
+package com.mphasis.stormreaper.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

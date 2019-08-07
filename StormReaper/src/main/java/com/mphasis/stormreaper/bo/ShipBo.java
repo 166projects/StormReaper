@@ -1,7 +1,7 @@
 package com.mphasis.stormreaper.bo;
 
-import com.mphasis.shipproject.entities.Ship;
-import com.mphasis.shipproject.entities.User;
+import com.mphasis.stormreaper.entities.Ship;
+import com.mphasis.stormreaper.entities.User;
 
 public interface ShipBo {
 	public int addShip(Ship sh);
