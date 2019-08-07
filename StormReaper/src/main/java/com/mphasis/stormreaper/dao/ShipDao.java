@@ -5,4 +5,5 @@ import com.mphasis.stormreaper.entities.Ship;
 
 public interface ShipDao {
 	public int addShip(Ship sh);
+	
 }
