@@ -44,8 +44,7 @@ public class Appconfig {
     props.put("hibernate.dialect","org.hibernate.dialect.OracleDialect");
     props.put("hibernate.hbm2ddl.auto", "update");
     props.put("hibernate.show_sql","true");
-    props.put("hibernate.format_sql", "true");
-    props.put("hibernate.default_schema","shipproject");
+    props.put("hibernate.format_sql", "true");   
     sessionFactory.setHibernateProperties(props);
     sessionFactory.setPackagesToScan("com.mphasis.stormreaper.entities");
     return sessionFactory;

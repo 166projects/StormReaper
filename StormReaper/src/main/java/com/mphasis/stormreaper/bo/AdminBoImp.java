@@ -12,12 +12,12 @@ import com.mphasis.stormreaper.entities.Admin;
 public class AdminBoImp implements AdminBo {
 
 	@Autowired
-	AdminDao adminDao;
+	 AdminDao adminDao;
 	
 	
 
 	public void removeAdmin(int aid) {
-		adminDao.removeAdmin(aid);
+		  adminDao.removeAdmin(aid);
 
 	}
 
