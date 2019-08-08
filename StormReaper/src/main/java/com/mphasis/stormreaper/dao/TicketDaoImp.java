@@ -2,31 +2,50 @@ package com.mphasis.stormreaper.dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Repository;
 import com.mphasis.stormreaper.entities.Ticket;
 
+@Repository
 public class TicketDaoImp implements TicketDao {
-@Autowired
-SessionFactory sessionFactory; 
-	public void addTicket(Ticket t) {
-		
-		return 0;
+	@Autowired
+	SessionFactory sessionFactory;
+	
+	public void addTicket(Ticket t) {	
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		session.save(t);
+		tr.commit();
+		session.close();	
 	}
 
 	public void editTicket(int ticketno) {
-		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		session.save(ticketno);
+		tr.commit();
+		session.close();
 
 	}
 
 	public void deleteTicket(int ticketno) {
-		// TODO Auto-generated method stub
-
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		session.save(ticketno);
+		tr.commit();
+		session.close();
 	}
 
-	public List<Ticket> getByTicketno(int ticketno) {
-		// TODO Auto-generated method stub
-		return null;
+	public Ticket getByTicketno(int ticketno) {
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		Ticket Ticket=(Ticket) session.get(Ticket.class,ticketno);
+		session.close();
+		tr.commit();
+		return Ticket;
 	}
 
 }
