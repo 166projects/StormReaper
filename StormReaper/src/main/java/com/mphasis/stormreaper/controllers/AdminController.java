@@ -53,7 +53,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/deleteadmin",method=RequestMethod.DELETE,produces=MediaType.APPLICATION_JSON_VALUE)
-	public void removeAdmin(int  aid)
+	public void removeAdmin(int  aid )
 	{
 		 adminBo.removeAdmin(aid);
 	}
