@@ -19,7 +19,7 @@ import com.mphasis.stormreaper.entities.User;
 public class UserController {
 
 	@Autowired
-	UserBo userBo;
+	UserBo userBo; 
 	
 	@Autowired
 	PassengerBo passengerBo;

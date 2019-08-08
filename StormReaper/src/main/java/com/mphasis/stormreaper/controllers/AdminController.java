@@ -21,7 +21,7 @@ import com.mphasis.stormreaper.entities.Route;
 public class AdminController {
 
 	@Autowired
-	AdminBo adminBo;
+	AdminBo adminBo; 
 	
 	@Autowired
 	PassengerBo passengerBo;
