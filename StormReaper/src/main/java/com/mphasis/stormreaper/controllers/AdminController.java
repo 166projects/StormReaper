@@ -62,7 +62,7 @@ public class AdminController {
 	@RequestMapping(value="/getadmin", method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public void getAdmin(int aid)
 	{ 
-		adminBo.getAdminById(aid);
+		 adminBo.getAdminById(aid);
 	}
 	
 	@RequestMapping(value="/getpassengerbyid",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)

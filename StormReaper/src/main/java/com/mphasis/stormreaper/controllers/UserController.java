@@ -28,7 +28,7 @@ public class UserController {
     public int addPassenger(Passenger p)
     {
 		passengerBo.addPassenger(p);
-		return 1;
+		return  1;
 		
     }
 	
