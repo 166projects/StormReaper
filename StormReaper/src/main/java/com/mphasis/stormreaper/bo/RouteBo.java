@@ -1,8 +1,13 @@
 package com.mphasis.stormreaper.bo;
 
-import com.mphasis.stormreaper.entities.Passenger;
+import java.util.List;
+
 import com.mphasis.stormreaper.entities.Route;
 
 public interface RouteBo {
-	public int addRoute(Route r);
+	public List<Route> getAllRoutes();
+	public void addRoute(Route r);
+	public void deleteRoute(int routeid);
+	public void editRoute(Route r);
+	public Route getRoutebyId(int routeid);
 }

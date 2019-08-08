@@ -13,9 +13,9 @@ public class ScheduleBoImp implements ScheduleBo {
 	@Autowired
 	ScheduleDao scheduleDao;
 	
-	public List<Schedule> getSchedules() {
+	public List<Schedule> getAllSchedules() {
 		// TODO Auto-generated method stub
-		List<Schedule> schedules=scheduleDao.getSchedules();
+		List<Schedule> schedules=scheduleDao.getAllSchedules();
 		/*if(schedules.isEmpty())
 		{
 			
