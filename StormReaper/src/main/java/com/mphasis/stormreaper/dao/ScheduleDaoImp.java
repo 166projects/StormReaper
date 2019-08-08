@@ -17,7 +17,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
-	public List<Schedule> getSchedules() {
+	public List<Schedule> getAllSchedules() {
 		Session session= sessionFactory.openSession();
 		List<Schedule> schedules=session.createCriteria(Schedule.class).list();
 		return schedules;
