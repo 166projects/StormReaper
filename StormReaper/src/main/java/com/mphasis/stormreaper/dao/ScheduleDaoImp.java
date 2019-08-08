@@ -2,53 +2,57 @@ package com.mphasis.stormreaper.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mphasis.stormreaper.entities.Schedule;
 
 @Repository
-@Transactional
 public class ScheduleDaoImp implements ScheduleDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
 	public List<Schedule> getAllSchedules() {
 		Session session= sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
 		List<Schedule> schedules=session.createCriteria(Schedule.class).list();
+		tr.commit();
 		return schedules;
 	}
 
-	public Schedule getScheduleById(int id) {
+	public Schedule getScheduleById(int scheduleid) {
 		Session session=sessionFactory.openSession();
-		Schedule schedule=(Schedule) session.get(Schedule.class,id);
-		session.close();
+		Transaction tr=session.beginTransaction();
+		Schedule schedule=(Schedule) session.get(Schedule.class,scheduleid);
+		tr.commit();
 		return schedule;
 	}
 
 	public void addSchedule(Schedule schedule) {
 		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
 		session.save(schedule);
-		session.close();
-		
+		tr.commit();	
 	}
 
-	public void deleteSchedule(int id) {
+	public void deleteSchedule(int scheduleid) {
 		Session session=sessionFactory.openSession();
-		Schedule schedule=(Schedule) session.get(Schedule.class,id);
+		Transaction tr=session.beginTransaction();
+		Schedule schedule=(Schedule) session.get(Schedule.class,scheduleid);
 		session.delete(schedule);
-		session.close();
+		tr.commit();
 
 	}
 
 	
 	public void editSchedule(Schedule schedule) {
 		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
 		session.update(schedule);
+		tr.commit();
 		session.close();
 		
 	}
