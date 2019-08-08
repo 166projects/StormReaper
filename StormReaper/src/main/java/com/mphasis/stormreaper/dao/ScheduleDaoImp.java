@@ -41,7 +41,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 	public void deleteSchedule(int scheduleid) {
 		Session session=sessionFactory.openSession();
 		Transaction tr=session.beginTransaction();
-		Schedule schedule=(Schedule) session.get(Schedule.class,scheduleid);
+		Schedule schedule=(Schedule) session.get(Schedule.class ,scheduleid);
 		session.delete(schedule);
 		tr.commit();
 
