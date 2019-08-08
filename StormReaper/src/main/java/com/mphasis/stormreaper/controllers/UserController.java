@@ -7,7 +7,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mphasis.stormreaper.bo.PassengerBo;
 import com.mphasis.stormreaper.bo.UserBo;
 import com.mphasis.stormreaper.entities.Passenger;
@@ -25,7 +24,7 @@ public class UserController {
 	@Autowired
 	PassengerBo passengerBo;
 	
-	@RequestMapping(value="/add",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/addpassenger",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
     public int addPassenger(Passenger p)
     {
 		passengerBo.addPassenger(p);
@@ -66,6 +65,13 @@ public class UserController {
     public void deletePassenger(int pid)
     {
 		passengerBo.deletePassenger(pid);
+	
+    }
+	
+	@RequestMapping(value="/editpasseneger",method=RequestMethod.PUT,produces=MediaType.APPLICATION_JSON_VALUE)
+    public void editPassenger(Passenger p)
+    {
+		passengerBo.editPassenger(p);
 		
     }
 	
