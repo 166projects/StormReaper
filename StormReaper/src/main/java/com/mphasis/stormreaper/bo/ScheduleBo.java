@@ -10,6 +10,6 @@ public interface ScheduleBo {
 	public Schedule getScheduleById(int id);
 	public void addSchedule(Schedule schedule);
 	public void editSchedule(Schedule schedule);
-	public void removeSchedule(int id);
+	public void deleteSchedule(int id);
 
 }

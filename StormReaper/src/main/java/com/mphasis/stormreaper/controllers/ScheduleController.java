@@ -42,7 +42,7 @@ public class ScheduleController {
 	public void deleteSchedule(@PathVariable("id")int id)
 	{
 		
-		scheduleBo.removeSchedule(id);
+		scheduleBo.deleteSchedule(id);
 	}
 	@RequestMapping(value="/Schedules/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public void getScheduleById(@PathVariable("id")int id)

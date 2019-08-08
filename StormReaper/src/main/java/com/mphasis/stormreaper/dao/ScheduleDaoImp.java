@@ -30,7 +30,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 		return schedule;
 	}
 
-	public void insertSchedule(Schedule schedule) {
+	public void addSchedule(Schedule schedule) {
 		Session session=sessionFactory.openSession();
 		session.save(schedule);
 		session.close();
@@ -46,7 +46,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 	}
 
 	
-	public void updateSchedule(Schedule schedule) {
+	public void editSchedule(Schedule schedule) {
 		Session session=sessionFactory.openSession();
 		session.update(schedule);
 		session.close();

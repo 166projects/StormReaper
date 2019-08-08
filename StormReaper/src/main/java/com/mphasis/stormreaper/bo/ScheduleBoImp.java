@@ -30,16 +30,16 @@ public class ScheduleBoImp implements ScheduleBo {
 	}
 
 	public void addSchedule(Schedule schedule) {
-	scheduleDao.insertSchedule(schedule);
+	scheduleDao.addSchedule(schedule);
 			
 
 	}
 
 	public void editSchedule(Schedule schedule) {
-		scheduleDao.updateSchedule(schedule);
+		scheduleDao.editSchedule(schedule);
 	}
 
-	public void removeSchedule(int id) {
+	public void deleteSchedule(int id) {
 		scheduleDao.deleteSchedule(id);
 	}
 
