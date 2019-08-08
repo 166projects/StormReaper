@@ -9,6 +9,6 @@ public interface PassengerBo {
 	public void addPassenger(Passenger p);
 	public void deletePassenger(int id);
 	public void editPassenger(Passenger p);
-	public Passenger getPassengersById(int id);
+	public Passenger getPassengerById(int id);
 	public List<Passenger> getAllPassengers();
 }

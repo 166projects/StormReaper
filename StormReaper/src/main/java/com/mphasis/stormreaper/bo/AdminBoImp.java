@@ -22,14 +22,36 @@ public class AdminBoImp implements AdminBo {
 	}
 
 	
-	public Admin getAdmin(int aid) {
-		Admin admin=adminDao.getAdmin(aid);
+	public Admin getAdminById(int aid) {
+		Admin admin=adminDao.getAdminById(aid);
 		 return admin;
 	}
 
 	public int addAdmin(Admin a) {
-		 adminDao.addAdmin(a);
+		 Admin admin=a;
+		 try { if( admin.getAdminpassword().matches("[a-zA-Z]{8,}"))
+				 adminDao.addAdmin(a);
+		 else
+			 throw new Exception("invalid Credentials");
+		 }catch(Exception e)
+		 {
+			 e.printStackTrace();
+		 }
 			return 1;
+	}
+
+
+	public Admin loginAdmin(int aid, String adminpassword) {
+		Admin admin=null;
+		try {if( adminpassword.matches("[a-zA-Z]{8,}"))
+			admin=adminDao.loginAdmin(aid, adminpassword);
+		else	
+	    throw new Exception("invalid pattern");
+		}
+			 catch (Exception e) {
+				e.printStackTrace();
+			}
+		return admin;	
 	}
 
 	

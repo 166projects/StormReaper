@@ -22,10 +22,10 @@ public class TicketDaoImp implements TicketDao {
 		session.close();	
 	}
 
-	public void editTicket(int ticketno) {
+	public void editTicket(Ticket t) {
 		Session session=sessionFactory.openSession();
 		Transaction tr=session.beginTransaction();
-		session.save(ticketno);
+		session.update(t);
 		tr.commit();
 		session.close();
 
@@ -34,7 +34,8 @@ public class TicketDaoImp implements TicketDao {
 	public void deleteTicket(int ticketno) {
 		Session session=sessionFactory.openSession();
 		Transaction tr=session.beginTransaction();
-		session.save(ticketno);
+		Ticket  t=(Ticket) session.get(Ticket.class, ticketno);
+		session.delete(t);
 		tr.commit();
 		session.close();
 	}
@@ -42,10 +43,19 @@ public class TicketDaoImp implements TicketDao {
 	public Ticket getByTicketno(int ticketno) {
 		Session session=sessionFactory.openSession();
 		Transaction tr=session.beginTransaction();
-		Ticket Ticket=(Ticket) session.get(Ticket.class,ticketno);
-		session.close();
+		Ticket ticket=(Ticket) session.get(Ticket.class,ticketno);	
 		tr.commit();
-		return Ticket;
+		session.close();
+		return ticket;
+	}
+
+	public List<Ticket> getAllTickets() {
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		List<Ticket> tickets=session.createCriteria(Ticket.class).list();
+		tr.commit();
+		session.close();
+		return tickets;
 	}
 
 }

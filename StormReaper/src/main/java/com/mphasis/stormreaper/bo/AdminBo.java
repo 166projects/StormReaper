@@ -6,6 +6,7 @@ public interface AdminBo {
 	
 	public  int addAdmin(Admin a);
 	public void removeAdmin(int  aid);
-	public Admin getAdmin(int aid);
+	public Admin getAdminById(int aid);
+	public Admin  loginAdmin(int aid, String adminpassword);
 
 }

@@ -24,7 +24,7 @@ public class Ship {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int shipid;
-	@Column(nullable=false)
+	@Column(nullable=false,unique=true)
 	private String shipname;
 	@Column(nullable=false)
 	private String source;

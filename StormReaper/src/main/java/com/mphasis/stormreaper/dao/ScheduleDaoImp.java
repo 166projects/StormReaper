@@ -20,6 +20,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 		Transaction tr=session.beginTransaction();
 		List<Schedule> schedules=session.createCriteria(Schedule.class).list();
 		tr.commit();
+		session.close();
 		return schedules;
 	}
 
@@ -28,6 +29,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 		Transaction tr=session.beginTransaction();
 		Schedule schedule=(Schedule) session.get(Schedule.class,scheduleid);
 		tr.commit();
+		session.close();
 		return schedule;
 	}
 
@@ -36,6 +38,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 		Transaction tr=session.beginTransaction();
 		session.save(schedule);
 		tr.commit();	
+		session.close();
 	}
 
 	public void deleteSchedule(int scheduleid) {
@@ -44,6 +47,7 @@ public class ScheduleDaoImp implements ScheduleDao {
 		Schedule schedule=(Schedule) session.get(Schedule.class ,scheduleid);
 		session.delete(schedule);
 		tr.commit();
+		session.close();
 
 	}
 

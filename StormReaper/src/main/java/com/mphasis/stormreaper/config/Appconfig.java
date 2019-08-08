@@ -19,7 +19,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @EnableAspectJAutoProxy
-@EnableTransactionManagement
 @ComponentScan(basePackages="com.mphasis.stormreaper")
 public class Appconfig {
 
@@ -58,14 +57,6 @@ public class Appconfig {
     	return new AspectHelper();
     }
     
-    
-    @Bean
-    public HibernateTransactionManager getHibernateTransactionManager(SessionFactory sessionFactory)
-    {
-    	HibernateTransactionManager  hibernateTransactionManager=new HibernateTransactionManager();
-    	hibernateTransactionManager.setSessionFactory(sessionFactory);
-    	return hibernateTransactionManager;
-    }
     
     
     

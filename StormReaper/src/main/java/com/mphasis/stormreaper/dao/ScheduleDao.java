@@ -2,7 +2,7 @@ package com.mphasis.stormreaper.dao;
 
 import java.util.List;
 
-import com.mphasis.stormreaper.entities.Passenger;
+
 import com.mphasis.stormreaper.entities.Schedule;
 
 public interface ScheduleDao {

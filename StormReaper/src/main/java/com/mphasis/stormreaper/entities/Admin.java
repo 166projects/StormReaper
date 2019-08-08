@@ -19,7 +19,7 @@ public class Admin {
   @Column(nullable=false)
   private String adminname;
   @Column(nullable=false)
-  private long adminpassword;
+  private String adminpassword;
 
 
   
@@ -35,10 +35,11 @@ public String getAdminname() {
 public void setAdminname(String adminname) {
 	this.adminname = adminname;
 }
-public long getAdminpassword() {
+
+public String getAdminpassword() {
 	return adminpassword;
 }
-public void setAdminpassword(long adminpassword) {
+public void setAdminpassword(String adminpassword) {
 	this.adminpassword = adminpassword;
 }
 @Override

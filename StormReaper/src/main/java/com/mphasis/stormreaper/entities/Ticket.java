@@ -13,6 +13,17 @@ import javax.persistence.Table;
 @Table(name="ShipTicket")
 public class Ticket {
 	
+	/*
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ticket_seq")
+	@GenericGenerator(
+			name = "ticket_seq",
+			strategy = "com.mphasis.griffin.util.StringPrefixedSequenceIdGenerator",
+			parameters = {
+					@Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "4"),
+					@Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "SR"),
+					@Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
+	*/
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

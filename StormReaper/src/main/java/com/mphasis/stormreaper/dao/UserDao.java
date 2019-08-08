@@ -10,5 +10,7 @@ public interface UserDao {
 
 	public User getUserByEmailId(String emailid);
 
-	public void editUser(User u); 
+	public void editUser(User u);
+
+	public User loginUser(String emailid, String password); 
 }

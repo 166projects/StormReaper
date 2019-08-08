@@ -32,6 +32,7 @@ public class PassengerDaoImpl implements PassengerDao {
 		Passenger p=(Passenger) session.get(Passenger.class, id);
 		session.delete(p);
 		tr.commit();
+		session.close();
 	}
 
 	public void editPassenger(Passenger p) {
@@ -44,11 +45,12 @@ public class PassengerDaoImpl implements PassengerDao {
 	   
 	}
 
-	public Passenger getPassengersById(int id) {
+	public Passenger getPassengerById(int id) {
 		Session session=sessionFactory.openSession();
 		Transaction tr=session.beginTransaction();
 		Passenger p=(Passenger) session.get(Passenger.class, id);
 		tr.commit();
+		session.close();
 		return p;
 		
 	}
@@ -58,6 +60,7 @@ public class PassengerDaoImpl implements PassengerDao {
 		Transaction tr=session.beginTransaction();
 		List<Passenger> p=session.createCriteria(Passenger.class).list();
 		tr.commit();
+		session.close();
 		return p;
 		
 	}

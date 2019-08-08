@@ -9,10 +9,11 @@ import com.mphasis.stormreaper.dao.TicketDao;
 import com.mphasis.stormreaper.entities.Ticket;
 @Service
 public class TicketBoImp implements TicketBo {
-@Autowired
+
+	@Autowired
 TicketDao ticketDao;
 
-public Ticket getByTicketno(int ticketno) {
+ public Ticket getByTicketno(int ticketno) {
 	return ticketDao.getByTicketno(ticketno);
 }
 
@@ -21,14 +22,17 @@ public void addTicket(Ticket ticket) {
 	
 }
 
-public void editTicket(int ticketno) {
-	// TODO Auto-generated method stub
-	 ticketDao.editTicket(ticketno);
+public void editTicket(Ticket t) {
+	 ticketDao.editTicket(t);
 }
 
 public void deleteTicket(int ticketno) {
 	 ticketDao.deleteTicket(ticketno);
 	
+}
+
+public List<Ticket> getAllTickets() {
+	return ticketDao.getAllTickets();
 }
 }
 

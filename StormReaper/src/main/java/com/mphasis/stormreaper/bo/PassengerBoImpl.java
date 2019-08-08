@@ -43,9 +43,9 @@ public class PassengerBoImpl implements PassengerBo {
 		passengerDao.editPassenger(p);
 	}
 
-	public Passenger getPassengersById(int id) {
+	public Passenger getPassengerById(int id) {
 		
-		return passengerDao.getPassengersById(id);
+		return passengerDao.getPassengerById(id);
 		 
 	}
 
