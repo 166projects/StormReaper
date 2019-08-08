@@ -32,7 +32,7 @@ public class ScheduleController {
 	@RequestMapping(value="/add",method=RequestMethod.PUT,produces=MediaType.APPLICATION_JSON_VALUE)
 	public void updateSchedule(@RequestBody Schedule schedule)
 	{
-			Schedule sd=scheduleBo.getScheduleById(Schedule.getS);
+			Schedule sd=scheduleBo.getScheduleById(schedule.getScheduleid());
 			if(sd!=null)
 				scheduleBo.editSchedule(schedule);
 			else
