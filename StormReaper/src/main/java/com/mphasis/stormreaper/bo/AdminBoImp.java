@@ -21,9 +21,10 @@ public class AdminBoImp implements AdminBo {
 
 	}
 
+	
 	public Admin getAdmin(int aid) {
 		Admin admin=adminDao.getAdmin(aid);
-		return admin;
+		 return admin;
 	}
 
 	public int addAdmin(Admin a) {
