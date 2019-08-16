@@ -2,9 +2,11 @@ package com.mphasis.stormreaper.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,12 +20,18 @@ public class PassengerDaoImpl implements PassengerDao {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public void addPassenger(Passenger p) {
+	public Passenger addPassenger(Passenger p) {
 		Session session=sessionFactory.openSession();
 		Transaction tr=session.beginTransaction();
-		session.save(p);
+		long c=p.getContactno();
 		tr.commit();
-		session.close();
+		Transaction tr1=session.beginTransaction();
+		session.save(p);
+		tr1.commit();
+	  Criteria cr=session.createCriteria(Passenger.class).add(Restrictions.eq("contactno",c));
+		Passenger p1=(Passenger) cr;
+	  session.close();
+		return p1;
 	}
 
 	public void deletePassenger(String id) {

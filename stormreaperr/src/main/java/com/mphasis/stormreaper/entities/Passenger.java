@@ -42,7 +42,17 @@ public class Passenger implements Serializable {
 	private String pname;
 	 @Column(nullable=false)
 	private int age;
-	 @Column(nullable=false)
+	 @Column(length=10,nullable=false)
+	 private long contactno;
+	 public long getContactno() {
+		return contactno;
+	}
+
+	public void setContactno(long contactno) {
+		this.contactno = contactno;
+	}
+
+	@Column(nullable=false)
 	private String gender;
 	@Column(nullable=false)
 	private String bookingdate;

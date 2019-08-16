@@ -16,17 +16,17 @@ public class PassengerBoImpl implements PassengerBo {
 	PassengerDao passengerDao;
 	
 	
-	public void addPassenger(Passenger p) {
-		
+	public Passenger addPassenger(Passenger p) {
+		 Passenger p1=p;
 	
 			if(p.getGender().matches("[mMfF]{1}")) {
-		     passengerDao.addPassenger(p);
+		    p1= passengerDao.addPassenger(p);
 		}
 		else {
 			
 				System.out.println("Error");
 		}
-		
+		return p1;
 		}
 			
 		

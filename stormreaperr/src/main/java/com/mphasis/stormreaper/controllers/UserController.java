@@ -89,9 +89,9 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/addpassenger",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
-	   public void addPassenger(@RequestBody Passenger p)
+	   public Passenger addPassenger(@RequestBody Passenger p)
 		{		
-		passengerBo.addPassenger(p);
+		 return passengerBo.addPassenger(p);
 		
 		
 	   }
