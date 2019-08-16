@@ -1,6 +1,8 @@
 package com.mphasis.stormreaper.dao;
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -93,23 +95,24 @@ public List<Ship> getAllShips(){
 	session.close();
 	return ships; 
 }
-public Ship getShipByRouteId(Route r) {
+public List<Ship> getShipByRouteId(int route_id) {
 	Session session=sessionFactory.openSession();
 	Transaction tr=session.beginTransaction();
-//  Route r=session.get(Route.class,r);
-//    System.out.println(r);
-  System.out.println(r);
-    Ship s = (Ship) session.createCriteria(Ship.class).add(Restrictions.eq("route", r));
-//	Schedule sc1=ticket.getSchedule();
-//	Criteria cr1=session.createCriteria(Ship.class);
-//	cr1.add(Restrictions.eq("schedule", sc1));
-//	
+
+    System.out.println(route_id);
+	 TypedQuery query = session.createQuery(" from ShipProjectShip where route_id=:route_id");		
+     query.setParameter("route_id",route_id);
+
+List<Ship> rows=  query.getResultList();
+//System.out.println("Ticket details are"+ rows);
+//Ticket t=(Ticket) session.get("passenger_id","passenger_id");		
+tr.commit();
 //	Ship s=(Ship) cr1.uniqueResult();
-    System.out.println(s);
-	tr.commit();
+    System.out.println(rows);
+	
 	session.close();
 	
-	return s;
+	return rows;
 }
 
 

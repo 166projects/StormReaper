@@ -13,6 +13,6 @@ public interface ShipBo {
   	public Ship getShipById(int shipid);
   	public List getShipbyName(String shipname);
   	public List<Ship> getAllShips();
-	public Ship getShipByRouteId(Route r); 
+	public List<Ship> getShipByRouteId(int routeid); 
 
 }

@@ -89,9 +89,10 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/addpassenger",method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_VALUE)
-	   public void addPassenger(@RequestBody Passenger p)
+	   public List addPassenger(@RequestBody Passenger p)
 		{		
-		passengerBo.addPassenger(p);
+		System.out.println("Passanger Called");
+		 return passengerBo.addPassenger(p);
 		
 		
 	   }
@@ -177,7 +178,24 @@ public class UserController {
 		
 		
     }
-	 
+	
+	
+	@RequestMapping(value="/getshipbyrouteid/{routeid}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+    public List<Ship> getShipByRouteId(@PathVariable("routeid")int routeid)
+    {
+		return shipBo.getShipByRouteId(routeid);
+			
+		
+    }
+	
+	
+	
+	
+//	@RequestMapping(value="/getshipbyrouteid/{routeid}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+//	public List getShipByRouteId(@PathVariable("routeid") int routeid)
+//	{   System.out.println(routeid);
+//		 return getShipByRouteId(routeid);
+//	}
 }
 	
 	

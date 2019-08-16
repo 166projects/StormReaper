@@ -44,8 +44,18 @@ public class Passenger implements Serializable {
 	private int age;
 	 @Column(nullable=false)
 	private String gender;
-	@Column(nullable=false)
+	 @Column(insertable=false,columnDefinition="date default sysdate")
 	private String bookingdate;
+	 @Column(length=10,nullable=false,unique=true)
+	 private long contactno;
+	public long getContactno() {
+		return contactno;
+	}
+
+	public void setContactno(long contactno) {
+		this.contactno = contactno;
+	}
+
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="ship_id",nullable=false) 
 	private Ship ship;

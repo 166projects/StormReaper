@@ -50,8 +50,8 @@ public class ShipBoImp implements ShipBo {
 		return shipDao.getAllShips();
 	}
 
-	public Ship getShipByRouteId(Route r) {
-		return shipDao.getShipByRouteId(r);
+	public List<Ship> getShipByRouteId(int routeid) {
+		return shipDao.getShipByRouteId(routeid);
 		
 	}
 	

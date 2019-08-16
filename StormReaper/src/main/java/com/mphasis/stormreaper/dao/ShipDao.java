@@ -12,6 +12,6 @@ public interface ShipDao {
   	public Ship getShipById(int shipid);
 	public List getShipByName(String shipname);
 	public List<Ship> getAllShips();
-	public Ship getShipByRouteId(Route r);  
+	public List<Ship> getShipByRouteId(int routeid);  
 	
 }

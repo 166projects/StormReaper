@@ -6,7 +6,7 @@ import com.mphasis.stormreaper.entities.Passenger;
 import com.mphasis.stormreaper.entities.User;
 
 public interface PassengerBo {
-	public void addPassenger(Passenger p);
+	public List addPassenger(Passenger p);
 	public void deletePassenger(String id);
 	public void editPassenger(Passenger p);
 	public Passenger getPassengerById(String id);

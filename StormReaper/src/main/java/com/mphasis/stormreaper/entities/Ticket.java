@@ -41,6 +41,7 @@ public class Ticket  implements Serializable{
     @JoinColumn(name="passenger_id",nullable=false)
     private Passenger passenger;
     @Column(nullable=false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private int seat_no;
 	 @Column(nullable=false)
     private String paymenttype;
